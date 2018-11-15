@@ -93,7 +93,7 @@ public class CreateChannel {
             mychannel.initialize();
 
             fabClient.getInstance().setUserContext(org2Admin);
-            mychannel = fabClient.getInstance().getChannel("mychannel");
+            mychannel = fabClient.getInstance().getChannel(Config.CHANNEL_NAME);
             mychannel.joinPeer(peer0_org2);
             mychannel.joinPeer(peer1_org2);
 
