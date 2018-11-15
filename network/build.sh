@@ -7,7 +7,7 @@ set -e
 #Start from here
 echo -e "\nStopping the previous network (if any)"
 set -x
-docker-compose -f docker-compose.yaml down
+docker-compose -f docker-compose.yml down
 set +x
 
 # # If need to re-generate the artifacts, uncomment the following lines and run
@@ -55,7 +55,7 @@ set +x
 #
 # Create and Start the Docker containers for the network
 echo -e "\nSetting up the Hyperledger Fabric 1.1 network"
-docker-compose -f docker-compose.yaml up -d
-sleep 15
+docker-compose -f docker-compose.yml up -d
+sleep 1
 echo -e "\nNetwork setup completed!!\n"
 

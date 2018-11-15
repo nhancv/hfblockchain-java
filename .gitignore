@@ -1,5 +1,5 @@
 network/docker-compose/network-config.json
-network/docker-compose.yaml
+#network/docker-compose.yaml
 
 network_resources/config
 network_resources/crypto-config
