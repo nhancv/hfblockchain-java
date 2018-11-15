@@ -1,3 +1,20 @@
 network/config/*
 network/crypto-config/*
 java/.idea
+
+# Emacs backup files
+*~
+*#
+.#*
+# Vim file artifacts
+.*.sw*
+# installed platform-specific binaries
+.DS_Store
+
+build
+.gradle
+.DS_Store
+local.properties
+target
+*.jso
+*.iml
