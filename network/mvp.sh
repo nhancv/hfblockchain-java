@@ -375,7 +375,7 @@ function generateChannelArtifacts() {
   # Note: For some unknown reason (at least for now) the block file can't be
   # named orderer.genesis.block or the orderer will fail to launch!
   set -x
-  configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./config/genesis.block -channelID $CHANNEL_NAME
+  configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./config/genesis.block -channelID genesis
   res=$?
   set +x
   if [ $res -ne 0 ]; then
