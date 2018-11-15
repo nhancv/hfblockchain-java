@@ -13,6 +13,7 @@
 package org.app.network;
 
 import java.io.File;
+import java.security.Security;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.logging.Level;
@@ -22,6 +23,7 @@ import org.app.client.FabricClient;
 import org.app.config.Config;
 import org.app.user.UserContext;
 import org.app.util.Util;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.hyperledger.fabric.sdk.Channel;
 import org.hyperledger.fabric.sdk.ChannelConfiguration;
 import org.hyperledger.fabric.sdk.Enrollment;
@@ -38,6 +40,9 @@ import org.hyperledger.fabric.sdk.security.CryptoSuite;
 public class CreateChannel {
 
 	public static void main(String[] args) {
+		{
+			Security.addProvider(new BouncyCastleProvider());
+		}
 		try {
 			CryptoSuite.Factory.getCryptoSuite();
 			Util.cleanUp();

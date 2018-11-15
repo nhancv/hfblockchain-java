@@ -19,11 +19,11 @@ public class Config {
 	public static final String CHANNEL_CONFIG_PATH = "config/channel.tx";
 	
 	public static final String ORG1_USR_BASE_PATH = "crypto-config" + File.separator + "peerOrganizations" + File.separator
-			+ "org1.example.com" + File.separator + "users" + File.separator + "Admin@org1.example.com"
+			+ "org1.beesightsoft.com" + File.separator + "users" + File.separator + "Admin@org1.beesightsoft.com"
 			+ File.separator + "msp";
 	
 	public static final String ORG2_USR_BASE_PATH = "crypto-config" + File.separator + "peerOrganizations" + File.separator
-			+ "org2.example.com" + File.separator + "users" + File.separator + "Admin@org2.example.com"
+			+ "org2.beesightsoft.com" + File.separator + "users" + File.separator + "Admin@org2.beesightsoft.com"
 			+ File.separator + "msp";
 	
 	public static final String ORG1_USR_ADMIN_PK = ORG1_USR_BASE_PATH + File.separator + "keystore";
@@ -32,31 +32,31 @@ public class Config {
 	public static final String ORG2_USR_ADMIN_PK = ORG2_USR_BASE_PATH + File.separator + "keystore";
 	public static final String ORG2_USR_ADMIN_CERT = ORG2_USR_BASE_PATH + File.separator + "admincerts";
 	
-	public static final String CA_ORG1_URL = "http://localhost:7054";
+	public static final String CA_ORG1_URL = "http://ca.org1.beesightsoft.com:7054";
 	
-	public static final String CA_ORG2_URL = "http://localhost:8054";
+	public static final String CA_ORG2_URL = "http://ca.org2.beesightsoft.com:8054";
 	
-	public static final String ORDERER_URL = "grpc://localhost:7050";
+	public static final String ORDERER_URL = "grpc://orderer.beesightsoft.com:7050";
 	
-	public static final String ORDERER_NAME = "orderer.example.com";
+	public static final String ORDERER_NAME = "orderer.beesightsoft.com";
 	
 	public static final String CHANNEL_NAME = "mychannel";
 	
-	public static final String ORG1_PEER_0 = "peer0.org1.example.com";
+	public static final String ORG1_PEER_0 = "peer0.org1.beesightsoft.com";
 	
-	public static final String ORG1_PEER_0_URL = "grpc://localhost:7051";
+	public static final String ORG1_PEER_0_URL = "grpc://peer0.org1.beesightsoft.com:7051";
 	
-	public static final String ORG1_PEER_1 = "peer1.org1.example.com";
+	public static final String ORG1_PEER_1 = "peer1.org1.beesightsoft.com";
 	
-	public static final String ORG1_PEER_1_URL = "grpc://localhost:7056";
+	public static final String ORG1_PEER_1_URL = "grpc://peer1.org1.beesightsoft.com:7056";
 	
-    public static final String ORG2_PEER_0 = "peer0.org2.example.com";
+    public static final String ORG2_PEER_0 = "peer0.org2.beesightsoft.com";
 	
-	public static final String ORG2_PEER_0_URL = "grpc://localhost:8051";
+	public static final String ORG2_PEER_0_URL = "grpc://peer0.org2.beesightsoft.com:8051";
 	
-	public static final String ORG2_PEER_1 = "peer1.org2.example.com";
+	public static final String ORG2_PEER_1 = "peer1.org2.beesightsoft.com";
 	
-	public static final String ORG2_PEER_1_URL = "grpc://localhost:8056";
+	public static final String ORG2_PEER_1_URL = "grpc://peer1.org2.beesightsoft.com:8056";
 	
 	public static final String CHAINCODE_ROOT_DIR = "chaincode";
 	

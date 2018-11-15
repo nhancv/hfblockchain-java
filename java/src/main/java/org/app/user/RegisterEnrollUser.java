@@ -15,6 +15,9 @@ package org.app.user;
 import org.app.client.CAClient;
 import org.app.config.Config;
 import org.app.util.Util;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+import java.security.Security;
 
 /**
  * 
@@ -25,12 +28,15 @@ import org.app.util.Util;
 public class RegisterEnrollUser {
 
 	public static void main(String args[]) {
+		{
+			Security.addProvider(new BouncyCastleProvider());
+		}
 		try {
 			Util.cleanUp();
 			String caUrl = Config.CA_ORG1_URL;
 			CAClient caClient = new CAClient(caUrl, null);
 			// Enroll Admin to Org1MSP
-			UserContext adminUserContext = new UserContext();
+			org.app.user.UserContext adminUserContext = new org.app.user.UserContext();
 			adminUserContext.setName(Config.ADMIN);
 			adminUserContext.setAffiliation(Config.ORG1);
 			adminUserContext.setMspId(Config.ORG1_MSP);
@@ -38,7 +44,7 @@ public class RegisterEnrollUser {
 			adminUserContext = caClient.enrollAdminUser(Config.ADMIN, Config.ADMIN_PASSWORD);
 
 			// Register and Enroll user to Org1MSP
-			UserContext userContext = new UserContext();
+			org.app.user.UserContext userContext = new org.app.user.UserContext();
 			String name = "user"+System.currentTimeMillis();
 			userContext.setName(name);
 			userContext.setAffiliation(Config.ORG1);

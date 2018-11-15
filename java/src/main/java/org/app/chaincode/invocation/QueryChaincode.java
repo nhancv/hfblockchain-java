@@ -14,6 +14,7 @@ package org.app.chaincode.invocation;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import java.security.Security;
 import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +25,7 @@ import org.app.client.FabricClient;
 import org.app.config.Config;
 import org.app.user.UserContext;
 import org.app.util.Util;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.hyperledger.fabric.sdk.Channel;
 import org.hyperledger.fabric.sdk.EventHub;
 import org.hyperledger.fabric.sdk.Orderer;
@@ -42,6 +44,9 @@ public class QueryChaincode {
 	private static final String EXPECTED_EVENT_NAME = "event";
 
 	public static void main(String args[]) {
+		{
+			Security.addProvider(new BouncyCastleProvider());
+		}
 		try {
             Util.cleanUp();
 			String caUrl = Config.CA_ORG1_URL;

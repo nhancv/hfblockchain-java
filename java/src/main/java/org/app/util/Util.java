@@ -27,6 +27,7 @@ import java.nio.file.Paths;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.Security;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.logging.Level;
@@ -36,6 +37,7 @@ import javax.xml.bind.DatatypeConverter;
 
 import org.app.user.CAEnrollment;
 import org.app.user.UserContext;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.hyperledger.fabric.sdk.exception.CryptoException;
 
 /**
