@@ -36,7 +36,7 @@ public class Config {
 
     public static final String ORDERER_NAME = "orderer.beesightsoft.com";
 
-    public static final String CHANNEL_NAME = "mychannel";
+    public static final String CHANNEL_NAME = "mvpchannel";
 
     public static final String ORG1_PEER_0 = "peer0.org1.beesightsoft.com";
 

@@ -1,36 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/network/mvp.sh" line="200" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="24ce304e-3cae-4720-bcfd-60bb002e7ed3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/network/channel-scripts/chaincode_utils.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/channel-scripts/channel_utils.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/channel-scripts/end2end.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/channel-scripts/mvp_channel.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/channel-scripts/mvp_channel_test.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/config-artifacts/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/docker-compose/base/docker-compose-base.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/docker-compose/base/peer-base.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/docker-compose/docker-compose-couch.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/docker-compose/docker-compose-full.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/docker-compose/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/mvp.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/network-config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain-client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain-client.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/network/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/configtx.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/network/configtx.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/crypto-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/network/crypto-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/docker-compose-root.yml" beforeDir="false" afterPath="$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/network/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/config/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/config/Org1MSPanchors.tx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/config/Org2MSPanchors.tx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/config/channel.tx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/config/genesis.block" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/fabric-ca-server.db" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/fabric-ca-server.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain-client.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yml" beforeDir="false" afterPath="$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/docker-compose/docker-compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/mvp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/network/mvp.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/network-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/network/docker-compose/network-config-root.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/chaincode/src/github.com/abac/abac.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/chaincode/src/github.com/fabcar/fabcar.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/chaincode/src/github.com/marbles02/marbles_chaincode.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config-artifacts/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config-artifacts/Org1MSPanchors.tx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config-artifacts/Org2MSPanchors.tx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config-artifacts/channel.tx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config-artifacts/genesis.block" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/ca/2d4540b7bd732a853f0dd8735563641a4b801c338d6a14b4e316d43c3273b13b_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/ca/ca.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/msp/admincerts/Admin@beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/msp/cacerts/ca.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/msp/tlscacerts/tlsca.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/msp/admincerts/Admin@beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/msp/cacerts/ca.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/msp/keystore/eaec0a3de5af561119dfe842ae30515502c63e1cec3b38bda243ee1ec06db7d5_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/msp/signcerts/orderer.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/msp/tlscacerts/tlsca.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/tls/server.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/tls/server.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/tlsca/53a9bc96de370e1e12d2233379df34ce198d55e8cfe97e2d633fe998993b02b4_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/tlsca/tlsca.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/users/Admin@beesightsoft.com/msp/admincerts/Admin@beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/users/Admin@beesightsoft.com/msp/cacerts/ca.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/users/Admin@beesightsoft.com/msp/keystore/bcb538b0338b899ad531b5549f4157e44232ccaaed1fac74e33be0fbfa7b501f_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/users/Admin@beesightsoft.com/msp/signcerts/Admin@beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/users/Admin@beesightsoft.com/msp/tlscacerts/tlsca.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/users/Admin@beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/users/Admin@beesightsoft.com/tls/client.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/users/Admin@beesightsoft.com/tls/client.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/IssuerPublicKey" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/IssuerRevocationPublicKey" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/ca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/e96db06aa004717825ea699f111d05942794d439886ba8d31d286fc8f0f45873_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/fabric-ca-server-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/fabric-ca-server.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/msp/keystore/IssuerRevocationPrivateKey" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/msp/keystore/IssuerSecretKey" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/msp/keystore/e96db06aa004717825ea699f111d05942794d439886ba8d31d286fc8f0f45873_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/msp/admincerts/Admin@org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/msp/cacerts/ca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/msp/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/msp/tlscacerts/tlsca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/msp/admincerts/Admin@org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/msp/cacerts/ca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/msp/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/msp/keystore/7c32e6f211f55e69dafad530e6f0097f11b93c956e1af0f5e650a6625d444707_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/msp/signcerts/peer0.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/msp/tlscacerts/tlsca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/tls/server.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/tls/server.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/msp/admincerts/Admin@org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/msp/cacerts/ca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/msp/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/msp/keystore/8ede281838e5c2e75ccad185420c2403fe0a9907d7b8005adc55f3cb64b37024_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/msp/signcerts/peer1.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/msp/tlscacerts/tlsca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/tls/server.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/tls/server.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/tlsca/172bf0dc47f8cfae58b6a63bf4dface2359dc54e6fed60fbe2c160992c5d744e_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/tlsca/tlsca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/msp/admincerts/Admin@org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/msp/cacerts/ca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/msp/keystore/2eef8f41fbf9a81e686776d46f02fdd5da0e61039e62de7bcd2ba80b5a3fada8_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/msp/signcerts/Admin@org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/msp/tlscacerts/tlsca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/tls/client.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/tls/client.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/User1@org1.beesightsoft.com/msp/admincerts/User1@org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/User1@org1.beesightsoft.com/msp/cacerts/ca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/User1@org1.beesightsoft.com/msp/keystore/c2902badd684c94570833ff6c90d4044a575d173f772fefb5adc58fbacd52b38_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/User1@org1.beesightsoft.com/msp/signcerts/User1@org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/User1@org1.beesightsoft.com/msp/tlscacerts/tlsca.org1.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/User1@org1.beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/User1@org1.beesightsoft.com/tls/client.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/User1@org1.beesightsoft.com/tls/client.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/0429eca0665312e16039993af14ef4affe4828d3d20dc74a045cab21739933b1_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/IssuerPublicKey" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/IssuerRevocationPublicKey" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/ca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/fabric-ca-server-config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/fabric-ca-server.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/msp/keystore/0429eca0665312e16039993af14ef4affe4828d3d20dc74a045cab21739933b1_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/msp/keystore/IssuerRevocationPrivateKey" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/msp/keystore/IssuerSecretKey" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/msp/admincerts/Admin@org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/msp/cacerts/ca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/msp/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/msp/tlscacerts/tlsca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/msp/admincerts/Admin@org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/msp/cacerts/ca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/msp/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/msp/keystore/be50caa6c41c38eebb32d9d0eb6086372470e827ef44f182f7e68c86d8683895_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/msp/signcerts/peer0.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/msp/tlscacerts/tlsca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/tls/server.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/tls/server.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/msp/admincerts/Admin@org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/msp/cacerts/ca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/msp/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/msp/keystore/f137e60b31c891bb04e1ffa2a82688b0d77920d5639b78d608b84a4d5b25c4fb_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/msp/signcerts/peer1.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/msp/tlscacerts/tlsca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/tls/server.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/tls/server.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/tlsca/e38214eb8d602a68c65e246337aff6d9b7efd3deb580ed493c560e973170702a_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/tlsca/tlsca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/Admin@org2.beesightsoft.com/msp/admincerts/Admin@org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/Admin@org2.beesightsoft.com/msp/cacerts/ca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/Admin@org2.beesightsoft.com/msp/keystore/a5ef4bb82175403486f92b2e9cf704987b30e2636eb076f85f123565b8f40852_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/Admin@org2.beesightsoft.com/msp/signcerts/Admin@org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/Admin@org2.beesightsoft.com/msp/tlscacerts/tlsca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/Admin@org2.beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/Admin@org2.beesightsoft.com/tls/client.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/Admin@org2.beesightsoft.com/tls/client.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/User1@org2.beesightsoft.com/msp/admincerts/User1@org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/User1@org2.beesightsoft.com/msp/cacerts/ca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/User1@org2.beesightsoft.com/msp/keystore/2e24f42839988875cab760c7fb95a4938e255b005e62c867e9d138f9c8958309_sk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/User1@org2.beesightsoft.com/msp/signcerts/User1@org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/User1@org2.beesightsoft.com/msp/tlscacerts/tlsca.org2.beesightsoft.com-cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/User1@org2.beesightsoft.com/tls/ca.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/User1@org2.beesightsoft.com/tls/client.crt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/User1@org2.beesightsoft.com/tls/client.key" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/org1/admin.ser" beforeDir="false" afterPath="$PROJECT_DIR$/users/org1/admin.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/util/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_mvn/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src_mvn/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_mvn/test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src_mvn/test.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,51 +158,51 @@
     <session id="1282552745">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="go" value="1" />
-          <entry key="java" value="34" />
+          <entry key="java" value="38" />
           <entry key="md" value="3" />
-          <entry key="sh" value="11" />
+          <entry key="sh" value="18" />
           <entry key="txt" value="1" />
-          <entry key="yaml" value="3" />
-          <entry key="yml" value="2" />
+          <entry key="yaml" value="5" />
+          <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bash" value="11" />
+          <entry key="Bash" value="18" />
           <entry key="Go" value="1" />
-          <entry key="JAVA" value="34" />
+          <entry key="JAVA" value="38" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="YAML" value="5" />
+          <entry key="YAML" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="java" value="94" />
+          <entry key="java" value="125" />
           <entry key="md" value="209" />
-          <entry key="sh" value="222" />
+          <entry key="sh" value="541" />
           <entry key="txt" value="55" />
-          <entry key="yaml" value="14" />
+          <entry key="yaml" value="22" />
           <entry key="yml" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="223" />
-          <entry key="JAVA" value="94" />
+          <entry key="Bash" value="542" />
+          <entry key="JAVA" value="125" />
           <entry key="Markdown" value="208" />
           <entry key="PLAIN_TEXT" value="56" />
-          <entry key="YAML" value="24" />
+          <entry key="YAML" value="32" />
         </counts>
       </usages-collector>
     </session>
@@ -95,55 +210,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/network/build.sh">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/user/RegisterEnrollUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="19" column="115" lean-forward="true" selection-start-line="19" selection-start-column="102" selection-end-line="19" selection-end-column="115" />
+            <state relative-caret-position="159">
+              <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/network/docker-compose.yml">
+        <entry file="file://$PROJECT_DIR$/network/mvp.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="13" lean-forward="true" selection-end-line="172" />
+            <state relative-caret-position="-222">
+              <caret line="201" column="37" lean-forward="true" selection-start-line="201" selection-start-column="37" selection-end-line="201" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose.yaml">
+        <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            <state relative-caret-position="217">
+              <caret line="73" column="64" lean-forward="true" selection-start-line="73" selection-start-column="64" selection-end-line="73" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/client/CAClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="27" selection-start-line="23" selection-end-line="24" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose-full.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="36" column="93" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="224">
+              <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,9 +261,24 @@
       <find>&quot; + File.separator + &quot;</find>
       <find>channel.tx</find>
       <find>/config/</find>
+      <find>goleveldb</find>
+      <find>couchdb</find>
+      <find>compose-cli</find>
+      <find>Enable</find>
+      <find>networkDown</find>
+      <find>networkUp</find>
+      <find>generateChannelArtifacts</find>
+      <find>Generating Orderer Genesis block</find>
+      <find>name</find>
+      <find>../network_resources</find>
+      <find>/config</find>
+      <find>resources/config</find>
+      <find>custom</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
+      <replace>../../dist/network_resources</replace>
+      <replace>mvp</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -172,7 +290,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/client/FabricClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/user/CAEnrollment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/user/UserContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/util/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/network/CreateChannel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/network/DeployInstantiateChaincode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/client/CAClient.java" />
@@ -184,15 +301,18 @@
         <option value="$PROJECT_DIR$/hf.txt" />
         <option value="$PROJECT_DIR$/build.sh" />
         <option value="$PROJECT_DIR$/test.sh" />
-        <option value="$PROJECT_DIR$/src_mvn/build.sh" />
-        <option value="$PROJECT_DIR$/src_mvn/test.sh" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/network/crypto-config.yaml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java" />
         <option value="$PROJECT_DIR$/network/build.sh" />
         <option value="$PROJECT_DIR$/network/docker-compose-root.yml" />
         <option value="$PROJECT_DIR$/network/docker-compose/docker-compose.yaml" />
+        <option value="$PROJECT_DIR$/src_mvn/build.sh" />
+        <option value="$PROJECT_DIR$/src_mvn/test.sh" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/util/Util.java" />
+        <option value="$PROJECT_DIR$/network/mvp.sh" />
+        <option value="$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yaml" />
       </list>
     </option>
   </component>
@@ -215,7 +335,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -227,6 +346,17 @@
             <path>
               <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
               <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="network_resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
               <item name="network" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -234,41 +364,6 @@
               <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
               <item name="network" type="462c0819:PsiDirectoryNode" />
               <item name="docker-compose" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
-              <item name="network_resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
-              <item name="network_resources" type="462c0819:PsiDirectoryNode" />
-              <item name="chaincode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
-              <item name="network_resources" type="462c0819:PsiDirectoryNode" />
-              <item name="chaincode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
-              <item name="network_resources" type="462c0819:PsiDirectoryNode" />
-              <item name="chaincode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
-              <item name="network_resources" type="462c0819:PsiDirectoryNode" />
-              <item name="chaincode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-              <item name="abac" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
@@ -313,6 +408,15 @@
             <path>
               <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
               <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hf" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
               <item name="src_mvn" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -320,13 +424,14 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542283070388" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542286505573" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -457,18 +562,18 @@
       <option name="presentableId" value="Default" />
       <updated>1542278986983</updated>
       <workItem from="1542278988168" duration="598000" />
-      <workItem from="1542280194773" duration="2868000" />
+      <workItem from="1542280194773" duration="5603000" />
+      <workItem from="1542285814577" duration="812000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3466000" />
+    <option name="totallyTimeSpent" value="7013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="834" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -485,7 +590,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32962447" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.49791378" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.49791378" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -520,16 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/client/CAClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/client/ChannelClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -540,48 +635,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hf.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="50" lean-forward="true" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/util/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/hf.txt" />
+    <entry file="file://$PROJECT_DIR$/build.sh" />
+    <entry file="file://$PROJECT_DIR$/test.sh" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/user/UserContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/user/RegisterEnrollUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -635,18 +695,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src_mvn/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/network_resources/chaincode/src/github.com/abac/abac.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/network_resources/chaincode/src/github.com/abac/abac.go" />
     <entry file="file://$PROJECT_DIR$/readme/READMEv1.2.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -674,31 +723,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src_mvn/test.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/network/crypto-config.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/network/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="19" column="115" lean-forward="true" selection-start-line="19" selection-start-column="102" selection-end-line="19" selection-end-column="115" />
         </state>
       </provider>
     </entry>
@@ -709,24 +737,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yml">
+    <entry file="file://$PROJECT_DIR$/src_mvn/build.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="27" selection-start-line="23" selection-end-line="24" selection-end-column="27" />
+        <state relative-caret-position="75">
+          <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src_mvn/test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/channel-scripts/chaincode_utils.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1481" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/teardown.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="55" lean-forward="true" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/build.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/util/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/user/RegisterEnrollUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/docker-compose/network-config.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/client/CAClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/network/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="13" lean-forward="true" selection-end-line="172" />
+        <state relative-caret-position="91">
+          <caret line="88" column="37" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        <state relative-caret-position="200">
+          <caret line="51" column="20" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/mvp.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-222">
+          <caret line="201" column="37" lean-forward="true" selection-start-line="201" selection-start-column="37" selection-end-line="201" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="73" column="64" lean-forward="true" selection-start-line="73" selection-start-column="64" selection-end-line="73" selection-end-column="64" />
         </state>
       </provider>
     </entry>

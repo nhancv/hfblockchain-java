@@ -14,4 +14,3 @@ network/crypto-config/*
 local.properties
 target
 *.iml
-blockchain-client.jar

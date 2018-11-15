@@ -51,7 +51,7 @@ public class Util {
 	 * @throws Exception
 	 */
 	public static void writeUserContext(org.app.blockchain.hf.user.UserContext userContext) throws Exception {
-		String directoryPath = "users/" + userContext.getAffiliation();
+		String directoryPath = "network_resources/users/" + userContext.getAffiliation();
 		String filePath = directoryPath + "/" + userContext.getName() + ".ser";
 		File directory = new File(directoryPath);
 		if (!directory.exists())
@@ -76,7 +76,7 @@ public class Util {
 	 * @throws Exception
 	 */
 	public static org.app.blockchain.hf.user.UserContext readUserContext(String affiliation, String username) throws Exception {
-		String filePath = "users/" + affiliation + "/" + username + ".ser";
+		String filePath = "network_resources/users/" + affiliation + "/" + username + ".ser";
 		File file = new File(filePath);
 		if (file.exists()) {
 			// Reading the object from a file

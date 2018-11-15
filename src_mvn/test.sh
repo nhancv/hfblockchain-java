@@ -1,7 +1,7 @@
 #!/bin/bash
 CURRENT_DIR=$PWD
 # Go to src
-cd ../
+cd ../dist
 set -e
 
 # Create and Initialize the channel
