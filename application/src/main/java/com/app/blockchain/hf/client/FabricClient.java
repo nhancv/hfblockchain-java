@@ -10,14 +10,7 @@
  *  See the License for the specific language governing permissions and 
  *  limitations under the License.
  */
-package org.app.blockchain.hf.client;
-
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+package com.app.blockchain.hf.client;
 
 import org.hyperledger.fabric.sdk.ChaincodeID;
 import org.hyperledger.fabric.sdk.Channel;
@@ -31,89 +24,69 @@ import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
 import org.hyperledger.fabric.sdk.exception.ProposalException;
 import org.hyperledger.fabric.sdk.security.CryptoSuite;
 
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Wrapper class for HFClient.
- * 
- * @author Balaji Kadambi
  *
+ * @author Balaji Kadambi
  */
 
 public class FabricClient {
 
-	private HFClient instance;
+    private HFClient instance;
 
-	/**
-	 * Return an instance of HFClient.
-	 * 
-	 * @return
-	 */
-	public HFClient getInstance() {
-		return instance;
-	}
+    /**
+     * Constructor
+     */
+    public FabricClient(User context) throws CryptoException, InvalidArgumentException, IllegalAccessException, InstantiationException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException {
+        CryptoSuite cryptoSuite = CryptoSuite.Factory.getCryptoSuite();
+        // setup the client
+        instance = HFClient.createNewInstance();
+        instance.setCryptoSuite(cryptoSuite);
+        instance.setUserContext(context);
+    }
 
-	/**
-	 * Constructor
-	 * 
-	 * @param context
-	 * @throws CryptoException
-	 * @throws InvalidArgumentException
-	 * @throws InvocationTargetException 
-	 * @throws NoSuchMethodException 
-	 * @throws ClassNotFoundException 
-	 * @throws InstantiationException 
-	 * @throws IllegalAccessException 
-	 */
-	public FabricClient(User context) throws CryptoException, InvalidArgumentException, IllegalAccessException, InstantiationException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException {
-		CryptoSuite cryptoSuite = CryptoSuite.Factory.getCryptoSuite();
-		// setup the client
-		instance = HFClient.createNewInstance();
-		instance.setCryptoSuite(cryptoSuite);
-		instance.setUserContext(context);
-	}
+    /**
+     * Return an instance of HFClient.
+     */
+    public HFClient getInstance() {
+        return instance;
+    }
 
-	/**
-	 * Create a channel client.
-	 * 
-	 * @param name
-	 * @return
-	 * @throws InvalidArgumentException
-	 */
-	public org.app.blockchain.hf.client.ChannelClient createChannelClient(String name) throws InvalidArgumentException {
-		Channel channel = instance.newChannel(name);
-		org.app.blockchain.hf.client.ChannelClient client = new org.app.blockchain.hf.client.ChannelClient(name, channel, this);
-		return client;
-	}
+    /**
+     * Create a channel client.
+     */
+    public ChannelClient createChannelClient(String name) throws InvalidArgumentException {
+        Channel channel = instance.newChannel(name);
+        ChannelClient client = new ChannelClient(name, channel, this);
+        return client;
+    }
 
-	/**
-	 * Deploy chain code.
-	 * 
-	 * @param chainCodeName
-	 * @param chaincodePath
-	 * @param codepath
-	 * @param language
-	 * @param version
-	 * @param peers
-	 * @return
-	 * @throws InvalidArgumentException
-	 * @throws IOException
-	 * @throws ProposalException
-	 */
-	public Collection<ProposalResponse> deployChainCode(String chainCodeName, String chaincodePath, String codepath,
-			String language, String version, Collection<Peer> peers)
-			throws InvalidArgumentException, IOException, ProposalException {
-		InstallProposalRequest request = instance.newInstallProposalRequest();
-		ChaincodeID.Builder chaincodeIDBuilder = ChaincodeID.newBuilder().setName(chainCodeName).setVersion(version)
-				.setPath(chaincodePath);
-		ChaincodeID chaincodeID = chaincodeIDBuilder.build();
-		Logger.getLogger(FabricClient.class.getName()).log(Level.INFO,
-				"Deploying chaincode " + chainCodeName + " using Fabric client " + instance.getUserContext().getMspId()
-						+ " " + instance.getUserContext().getName());
-		request.setChaincodeID(chaincodeID);
-		request.setUserContext(instance.getUserContext());
-		request.setChaincodeSourceLocation(new File(codepath));
-		request.setChaincodeVersion(version);
-		Collection<ProposalResponse> responses = instance.sendInstallProposal(request, peers);
-		return responses;
-	}
+    /**
+     * Deploy chain code.
+     */
+    public Collection<ProposalResponse> deployChainCode(String chainCodeName, String chaincodePath, String codepath,
+                                                        String language, String version, Collection<Peer> peers)
+            throws InvalidArgumentException, IOException, ProposalException {
+        InstallProposalRequest request = instance.newInstallProposalRequest();
+        ChaincodeID.Builder chaincodeIDBuilder = ChaincodeID.newBuilder().setName(chainCodeName).setVersion(version)
+                .setPath(chaincodePath);
+        ChaincodeID chaincodeID = chaincodeIDBuilder.build();
+        Logger.getLogger(FabricClient.class.getName()).log(Level.INFO,
+                "Deploying chaincode " + chainCodeName + " using Fabric client " + instance.getUserContext().getMspId()
+                        + " " + instance.getUserContext().getName());
+        request.setChaincodeID(chaincodeID);
+        request.setUserContext(instance.getUserContext());
+        request.setChaincodeSourceLocation(new File(codepath));
+        request.setChaincodeVersion(version);
+        Collection<ProposalResponse> responses = instance.sendInstallProposal(request, peers);
+        return responses;
+    }
 
 }

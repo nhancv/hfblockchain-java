@@ -10,50 +10,52 @@
  *  See the License for the specific language governing permissions and 
  *  limitations under the License.
  */
-package org.app.blockchain.hf.user;
+package com.app.blockchain.hf.user;
+
+import com.app.blockchain.hf.client.CAClient;
+import com.app.blockchain.hf.config.Config;
+import com.app.blockchain.hf.util.Util;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import java.security.Security;
 
 /**
- * 
  * @author Balaji Kadambi
- *
  */
 
 public class RegisterEnrollUser {
 
-	public static void main(String args[]) {
-		{
-			Security.addProvider(new BouncyCastleProvider());
-		}
-		try {
-			org.app.blockchain.hf.util.Util.cleanUp();
-			String caUrl = org.app.blockchain.hf.config.Config.CA_ORG1_URL;
-			org.app.blockchain.hf.client.CAClient caClient = new org.app.blockchain.hf.client.CAClient(caUrl, null);
-			// Enroll Admin to Org1MSP
-			org.app.blockchain.hf.user.UserContext adminUserContext = new org.app.blockchain.hf.user.UserContext();
-			adminUserContext.setName(org.app.blockchain.hf.config.Config.ADMIN);
-			adminUserContext.setAffiliation(org.app.blockchain.hf.config.Config.ORG1);
-			adminUserContext.setMspId(org.app.blockchain.hf.config.Config.ORG1_MSP);
-			caClient.setAdminUserContext(adminUserContext);
-			adminUserContext = caClient.enrollAdminUser(org.app.blockchain.hf.config.Config.ADMIN, org.app.blockchain.hf.config.Config.ADMIN_PASSWORD);
+    public static void main(String args[]) {
+        {
+            Security.addProvider(new BouncyCastleProvider());
+        }
+        try {
+            Util.cleanUp();
+            String caUrl = Config.CA_ORG1_URL;
+            CAClient caClient = new CAClient(caUrl, null);
+            // Enroll Admin to Org1MSP
+            UserContext adminUserContext = new UserContext();
+            adminUserContext.setName(Config.ADMIN);
+            adminUserContext.setAffiliation(Config.ORG1);
+            adminUserContext.setMspId(Config.ORG1_MSP);
+            caClient.setAdminUserContext(adminUserContext);
+            adminUserContext = caClient.enrollAdminUser(Config.ADMIN, Config.ADMIN_PASSWORD);
 
-			// Register and Enroll user to Org1MSP
-			org.app.blockchain.hf.user.UserContext userContext = new org.app.blockchain.hf.user.UserContext();
-			String name = "user"+System.currentTimeMillis();
-			userContext.setName(name);
-			userContext.setAffiliation(org.app.blockchain.hf.config.Config.ORG1);
-			userContext.setMspId(org.app.blockchain.hf.config.Config.ORG1_MSP);
+            // Register and Enroll user to Org1MSP
+            UserContext userContext = new UserContext();
+            String name = "user" + System.currentTimeMillis();
+            userContext.setName(name);
+            userContext.setAffiliation(Config.ORG1);
+            userContext.setMspId(Config.ORG1_MSP);
 
-			String eSecret = caClient.registerUser(name, org.app.blockchain.hf.config.Config.ORG1);
+            String eSecret = caClient.registerUser(name, Config.ORG1);
 
-			userContext = caClient.enrollUser(userContext, eSecret);
+            userContext = caClient.enrollUser(userContext, eSecret);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

@@ -9,84 +9,83 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
  *  See the License for the specific language governing permissions and 
  *  limitations under the License.
- */ 
-package org.app.blockchain.hf.user;
-
-import java.io.Serializable;
-import java.util.Set;
+ */
+package com.app.blockchain.hf.user;
 
 import org.hyperledger.fabric.sdk.Enrollment;
 import org.hyperledger.fabric.sdk.User;
 
+import java.io.Serializable;
+import java.util.Set;
+
 /**
  * Implementation class for User
- * 
- * @author Balaji Kadambi
  *
+ * @author Balaji Kadambi
  */
 
 public class UserContext implements User, Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	protected String name;
-	protected Set<String> roles;
-	protected String account;
-	protected String affiliation;
-	protected Enrollment enrollment;
-	protected String mspId;
-	
-	public void setName(String name) {
-		this.name = name;
-	}
 
-	public void setRoles(Set<String> roles) {
-		this.roles = roles;
-	}
+    private static final long serialVersionUID = 1L;
+    protected String name;
+    protected Set<String> roles;
+    protected String account;
+    protected String affiliation;
+    protected Enrollment enrollment;
+    protected String mspId;
 
-	public void setAccount(String account) {
-		this.account = account;
-	}
+    @Override
+    public String getName() {
+        return name;
+    }
 
-	public void setAffiliation(String affiliation) {
-		this.affiliation = affiliation;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setEnrollment(Enrollment enrollment) {
-		this.enrollment = enrollment;
-	}
+    @Override
+    public Set<String> getRoles() {
+        return roles;
+    }
 
-	public void setMspId(String mspId) {
-		this.mspId = mspId;
-	}
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
+    }
 
-	@Override
-	public String getName() {
-		return name;
-	}
+    @Override
+    public String getAccount() {
+        return account;
+    }
 
-	@Override
-	public Set<String> getRoles() {
-		return roles;
-	}
+    public void setAccount(String account) {
+        this.account = account;
+    }
 
-	@Override
-	public String getAccount() {
-		return account;
-	}
+    @Override
+    public String getAffiliation() {
+        return affiliation;
+    }
 
-	@Override
-	public String getAffiliation() {
-		return affiliation;
-	}
+    public void setAffiliation(String affiliation) {
+        this.affiliation = affiliation;
+    }
 
-	@Override
-	public Enrollment getEnrollment() {
-		return enrollment;
-	}
+    @Override
+    public Enrollment getEnrollment() {
+        return enrollment;
+    }
 
-	@Override
-	public String getMspId() {
-		return mspId;
-	}
+    public void setEnrollment(Enrollment enrollment) {
+        this.enrollment = enrollment;
+    }
+
+    @Override
+    public String getMspId() {
+        return mspId;
+    }
+
+    public void setMspId(String mspId) {
+        this.mspId = mspId;
+    }
 
 }

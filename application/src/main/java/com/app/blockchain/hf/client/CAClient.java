@@ -9,14 +9,11 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
  *  See the License for the specific language governing permissions and 
  *  limitations under the License.
- */       
-package org.app.blockchain.hf.client;
+ */
+package com.app.blockchain.hf.client;
 
-import java.lang.reflect.InvocationTargetException;
-import java.net.MalformedURLException;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.app.blockchain.hf.user.UserContext;
+import com.app.blockchain.hf.util.Util;
 
 import org.hyperledger.fabric.sdk.Enrollment;
 import org.hyperledger.fabric.sdk.exception.CryptoException;
@@ -25,125 +22,102 @@ import org.hyperledger.fabric.sdk.security.CryptoSuite;
 import org.hyperledger.fabric_ca.sdk.HFCAClient;
 import org.hyperledger.fabric_ca.sdk.RegistrationRequest;
 
+import java.lang.reflect.InvocationTargetException;
+import java.net.MalformedURLException;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Wrapper class for HFCAClient.
- * 
- * @author Balaji Kadambi
  *
+ * @author Balaji Kadambi
  */
 
 public class CAClient {
 
-	String caUrl;
-	Properties caProperties;
+    String caUrl;
+    Properties caProperties;
 
-	HFCAClient instance;
+    HFCAClient instance;
 
-	org.app.blockchain.hf.user.UserContext adminContext;
+    UserContext adminContext;
 
-	public org.app.blockchain.hf.user.UserContext getAdminUserContext() {
-		return adminContext;
-	}
+    /**
+     * Constructor
+     */
+    public CAClient(String caUrl, Properties caProperties) throws MalformedURLException, IllegalAccessException, InstantiationException, ClassNotFoundException, CryptoException, InvalidArgumentException, NoSuchMethodException, InvocationTargetException {
+        this.caUrl = caUrl;
+        this.caProperties = caProperties;
+        init();
+    }
 
-	/**
-	 * Set the admin user context for registering and enrolling users.
-	 * 
-	 * @param userContext
-	 */
-	public void setAdminUserContext(org.app.blockchain.hf.user.UserContext userContext) {
-		this.adminContext = userContext;
-	}
+    public UserContext getAdminUserContext() {
+        return adminContext;
+    }
 
-	/**
-	 * Constructor
-	 * 
-	 * @param caUrl 
-	 * @param caProperties
-	 * @throws MalformedURLException
-	 * @throws InvocationTargetException 
-	 * @throws NoSuchMethodException 
-	 * @throws InvalidArgumentException 
-	 * @throws CryptoException 
-	 * @throws ClassNotFoundException 
-	 * @throws InstantiationException 
-	 * @throws IllegalAccessException 
-	 */
-	public CAClient(String caUrl, Properties caProperties) throws MalformedURLException, IllegalAccessException, InstantiationException, ClassNotFoundException, CryptoException, InvalidArgumentException, NoSuchMethodException, InvocationTargetException {
-		this.caUrl = caUrl;
-		this.caProperties = caProperties;
-		init();
-	}
+    /**
+     * Set the admin user context for registering and enrolling users.
+     */
+    public void setAdminUserContext(UserContext userContext) {
+        this.adminContext = userContext;
+    }
 
-	public void init() throws MalformedURLException, IllegalAccessException, InstantiationException, ClassNotFoundException, CryptoException, InvalidArgumentException, NoSuchMethodException, InvocationTargetException {
-		CryptoSuite cryptoSuite = CryptoSuite.Factory.getCryptoSuite();
-		instance = HFCAClient.createNewInstance(caUrl, caProperties);
-		instance.setCryptoSuite(cryptoSuite);
-	}
+    public void init() throws MalformedURLException, IllegalAccessException, InstantiationException, ClassNotFoundException, CryptoException, InvalidArgumentException, NoSuchMethodException, InvocationTargetException {
+        CryptoSuite cryptoSuite = CryptoSuite.Factory.getCryptoSuite();
+        instance = HFCAClient.createNewInstance(caUrl, caProperties);
+        instance.setCryptoSuite(cryptoSuite);
+    }
 
-	public HFCAClient getInstance() {
-		return instance;
-	}
+    public HFCAClient getInstance() {
+        return instance;
+    }
 
-	/**
-	 * Enroll admin user.
-	 * 
-	 * @param username
-	 * @param password
-	 * @return
-	 * @throws Exception
-	 */
-	public org.app.blockchain.hf.user.UserContext enrollAdminUser(String username, String password) throws Exception {
-		org.app.blockchain.hf.user.UserContext userContext = org.app.blockchain.hf.util.Util.readUserContext(adminContext.getAffiliation(), username);
-		if (userContext != null) {
-			Logger.getLogger(CAClient.class.getName()).log(Level.WARNING, "CA -" + caUrl + " admin is already enrolled.");
-			return userContext;
-		}
-		Enrollment adminEnrollment = instance.enroll(username, password);
-		adminContext.setEnrollment(adminEnrollment);
-		Logger.getLogger(CAClient.class.getName()).log(Level.INFO, "CA -" + caUrl + " Enrolled Admin.");
-		org.app.blockchain.hf.util.Util.writeUserContext(adminContext);
-		return adminContext;
-	}
+    /**
+     * Enroll admin user.
+     */
+    public UserContext enrollAdminUser(String username, String password) throws Exception {
+        UserContext userContext = Util.readUserContext(adminContext.getAffiliation(), username);
+        if (userContext != null) {
+            Logger.getLogger(CAClient.class.getName()).log(Level.WARNING, "CA -" + caUrl + " admin is already enrolled.");
+            return userContext;
+        }
+        Enrollment adminEnrollment = instance.enroll(username, password);
+        adminContext.setEnrollment(adminEnrollment);
+        Logger.getLogger(CAClient.class.getName()).log(Level.INFO, "CA -" + caUrl + " Enrolled Admin.");
+        Util.writeUserContext(adminContext);
+        return adminContext;
+    }
 
-	/**
-	 * Register user.
-	 * 
-	 * @param username
-	 * @param organization
-	 * @return
-	 * @throws Exception
-	 */
-	public String registerUser(String username, String organization) throws Exception {
-		org.app.blockchain.hf.user.UserContext userContext = org.app.blockchain.hf.util.Util.readUserContext(adminContext.getAffiliation(), username);
-		if (userContext != null) {
-			Logger.getLogger(CAClient.class.getName()).log(Level.WARNING, "CA -" + caUrl +" User " + username+ " is already registered.");
-			return null;
-		}
-		RegistrationRequest rr = new RegistrationRequest(username, organization);
-		String enrollmentSecret = instance.register(rr, adminContext);
-		Logger.getLogger(CAClient.class.getName()).log(Level.INFO, "CA -" + caUrl + " Registered User - " + username);
-		return enrollmentSecret;
-	}
+    /**
+     * Register user.
+     */
+    public String registerUser(String username, String organization) throws Exception {
+        UserContext userContext = Util.readUserContext(adminContext.getAffiliation(), username);
+        if (userContext != null) {
+            Logger.getLogger(CAClient.class.getName()).log(Level.WARNING, "CA -" + caUrl + " User " + username + " is already registered.");
+            return null;
+        }
+        RegistrationRequest rr = new RegistrationRequest(username, organization);
+        String enrollmentSecret = instance.register(rr, adminContext);
+        Logger.getLogger(CAClient.class.getName()).log(Level.INFO, "CA -" + caUrl + " Registered User - " + username);
+        return enrollmentSecret;
+    }
 
-	/**
-	 * Enroll user.
-	 * 
-	 * @param user
-	 * @param secret
-	 * @return
-	 * @throws Exception
-	 */
-	public org.app.blockchain.hf.user.UserContext enrollUser(org.app.blockchain.hf.user.UserContext user, String secret) throws Exception {
-		org.app.blockchain.hf.user.UserContext userContext = org.app.blockchain.hf.util.Util.readUserContext(adminContext.getAffiliation(), user.getName());
-		if (userContext != null) {
-			Logger.getLogger(CAClient.class.getName()).log(Level.WARNING, "CA -" + caUrl + " User " + user.getName()+" is already enrolled");
-			return userContext;
-		}
-		Enrollment enrollment = instance.enroll(user.getName(), secret);
-		user.setEnrollment(enrollment);
-		org.app.blockchain.hf.util.Util.writeUserContext(user);
-		Logger.getLogger(CAClient.class.getName()).log(Level.INFO, "CA -" + caUrl +" Enrolled User - " + user.getName());
-		return user;
-	}
+    /**
+     * Enroll user.
+     */
+    public UserContext enrollUser(UserContext user, String secret) throws Exception {
+        UserContext userContext = Util.readUserContext(adminContext.getAffiliation(), user.getName());
+        if (userContext != null) {
+            Logger.getLogger(CAClient.class.getName()).log(Level.WARNING, "CA -" + caUrl + " User " + user.getName() + " is already enrolled");
+            return userContext;
+        }
+        Enrollment enrollment = instance.enroll(user.getName(), secret);
+        user.setEnrollment(enrollment);
+        Util.writeUserContext(user);
+        Logger.getLogger(CAClient.class.getName()).log(Level.INFO, "CA -" + caUrl + " Enrolled User - " + user.getName());
+        return user;
+    }
 
 }

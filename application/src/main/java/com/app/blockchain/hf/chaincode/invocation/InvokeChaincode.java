@@ -9,17 +9,15 @@
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
  *  See the License for the specific language governing permissions and 
  *  limitations under the License.
- */ 
-package org.app.blockchain.hf.chaincode.invocation;
+ */
+package com.app.blockchain.hf.chaincode.invocation;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import java.security.Security;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.app.blockchain.hf.client.CAClient;
+import com.app.blockchain.hf.client.ChannelClient;
+import com.app.blockchain.hf.client.FabricClient;
+import com.app.blockchain.hf.config.Config;
+import com.app.blockchain.hf.user.UserContext;
+import com.app.blockchain.hf.util.Util;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.hyperledger.fabric.sdk.ChaincodeID;
@@ -31,68 +29,74 @@ import org.hyperledger.fabric.sdk.Peer;
 import org.hyperledger.fabric.sdk.ProposalResponse;
 import org.hyperledger.fabric.sdk.TransactionProposalRequest;
 
-/**
- * 
- * @author Balaji Kadambi
- *
- */
+import java.security.Security;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+/**
+ * @author Balaji Kadambi
+ */
 public class InvokeChaincode {
 
-	private static final byte[] EXPECTED_EVENT_DATA = "!".getBytes(UTF_8);
-	private static final String EXPECTED_EVENT_NAME = "event";
+    private static final byte[] EXPECTED_EVENT_DATA = "!".getBytes(UTF_8);
+    private static final String EXPECTED_EVENT_NAME = "event";
 
-	public static void main(String args[]) {
-		{
-			Security.addProvider(new BouncyCastleProvider());
-		}
-		try {
-            org.app.blockchain.hf.util.Util.cleanUp();
-			String caUrl = org.app.blockchain.hf.config.Config.CA_ORG1_URL;
-			org.app.blockchain.hf.client.CAClient caClient = new org.app.blockchain.hf.client.CAClient(caUrl, null);
-			// Enroll Admin to Org1MSP
-			org.app.blockchain.hf.user.UserContext adminUserContext = new org.app.blockchain.hf.user.UserContext();
-			adminUserContext.setName(org.app.blockchain.hf.config.Config.ADMIN);
-			adminUserContext.setAffiliation(org.app.blockchain.hf.config.Config.ORG1);
-			adminUserContext.setMspId(org.app.blockchain.hf.config.Config.ORG1_MSP);
-			caClient.setAdminUserContext(adminUserContext);
-			adminUserContext = caClient.enrollAdminUser(org.app.blockchain.hf.config.Config.ADMIN, org.app.blockchain.hf.config.Config.ADMIN_PASSWORD);
-			
-			org.app.blockchain.hf.client.FabricClient fabClient = new org.app.blockchain.hf.client.FabricClient(adminUserContext);
-			
-			org.app.blockchain.hf.client.ChannelClient channelClient = fabClient.createChannelClient(org.app.blockchain.hf.config.Config.CHANNEL_NAME);
-			Channel channel = channelClient.getChannel();
-			Peer peer = fabClient.getInstance().newPeer(org.app.blockchain.hf.config.Config.ORG1_PEER_0, org.app.blockchain.hf.config.Config.ORG1_PEER_0_URL);
-			EventHub eventHub = fabClient.getInstance().newEventHub("eventhub01", "grpc://localhost:7053");
-			Orderer orderer = fabClient.getInstance().newOrderer(org.app.blockchain.hf.config.Config.ORDERER_NAME, org.app.blockchain.hf.config.Config.ORDERER_URL);
-			channel.addPeer(peer);
-			channel.addEventHub(eventHub);
-			channel.addOrderer(orderer);
-			channel.initialize();
+    public static void main(String args[]) {
+        {
+            Security.addProvider(new BouncyCastleProvider());
+        }
+        try {
+            Util.cleanUp();
+            String caUrl = Config.CA_ORG1_URL;
+            CAClient caClient = new CAClient(caUrl, null);
+            // Enroll Admin to Org1MSP
+            UserContext adminUserContext = new UserContext();
+            adminUserContext.setName(Config.ADMIN);
+            adminUserContext.setAffiliation(Config.ORG1);
+            adminUserContext.setMspId(Config.ORG1_MSP);
+            caClient.setAdminUserContext(adminUserContext);
+            adminUserContext = caClient.enrollAdminUser(Config.ADMIN, Config.ADMIN_PASSWORD);
 
-			TransactionProposalRequest request = fabClient.getInstance().newTransactionProposalRequest();
-			ChaincodeID ccid = ChaincodeID.newBuilder().setName(org.app.blockchain.hf.config.Config.CHAINCODE_1_NAME).build();
-			request.setChaincodeID(ccid);
-			request.setFcn("createCar");
-			String[] arguments = { "CAR1", "Chevy", "Volt", "Red", "Nick" };
-			request.setArgs(arguments);
-			request.setProposalWaitTime(1000);
+            FabricClient fabClient = new FabricClient(adminUserContext);
 
-			Map<String, byte[]> tm2 = new HashMap<>();
-			tm2.put("HyperLedgerFabric", "TransactionProposalRequest:JavaSDK".getBytes(UTF_8)); 																								
-			tm2.put("method", "TransactionProposalRequest".getBytes(UTF_8)); 
-			tm2.put("result", ":)".getBytes(UTF_8));
-			tm2.put(EXPECTED_EVENT_NAME, EXPECTED_EVENT_DATA); 
-			request.setTransientMap(tm2);
-			Collection<ProposalResponse> responses = channelClient.sendTransactionProposal(request);
-			for (ProposalResponse res: responses) {
-				Status status = res.getStatus();
-				Logger.getLogger(InvokeChaincode.class.getName()).log(Level.INFO,"Invoked createCar on "+ org.app.blockchain.hf.config.Config.CHAINCODE_1_NAME + ". Status - " + status);
-			}
-									
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+            ChannelClient channelClient = fabClient.createChannelClient(Config.CHANNEL_NAME);
+            Channel channel = channelClient.getChannel();
+            Peer peer = fabClient.getInstance().newPeer(Config.ORG1_PEER_0, Config.ORG1_PEER_0_URL);
+            EventHub eventHub = fabClient.getInstance().newEventHub("eventhub01", "grpc://localhost:7053");
+            Orderer orderer = fabClient.getInstance().newOrderer(Config.ORDERER_NAME, Config.ORDERER_URL);
+            channel.addPeer(peer);
+            channel.addEventHub(eventHub);
+            channel.addOrderer(orderer);
+            channel.initialize();
+
+            TransactionProposalRequest request = fabClient.getInstance().newTransactionProposalRequest();
+            ChaincodeID ccid = ChaincodeID.newBuilder().setName(Config.CHAINCODE_1_NAME).build();
+            request.setChaincodeID(ccid);
+            request.setFcn("createCar");
+            String[] arguments = {"CAR1", "Chevy", "Volt", "Red", "Nick"};
+            request.setArgs(arguments);
+            request.setProposalWaitTime(1000);
+
+            Map<String, byte[]> tm2 = new HashMap<>();
+            tm2.put("HyperLedgerFabric", "TransactionProposalRequest:JavaSDK".getBytes(UTF_8));
+            tm2.put("method", "TransactionProposalRequest".getBytes(UTF_8));
+            tm2.put("result", ":)".getBytes(UTF_8));
+            tm2.put(EXPECTED_EVENT_NAME, EXPECTED_EVENT_DATA);
+            request.setTransientMap(tm2);
+            Collection<ProposalResponse> responses = channelClient.sendTransactionProposal(request);
+            for (ProposalResponse res : responses) {
+                Status status = res.getStatus();
+                Logger.getLogger(InvokeChaincode.class.getName()).log(Level.INFO, "Invoked createCar on " + Config.CHAINCODE_1_NAME + ". Status - " + status);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

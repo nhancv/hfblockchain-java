@@ -13,5 +13,4 @@ network/crypto-config/*
 .gradle
 local.properties
 target
-*.iml
 *.idea

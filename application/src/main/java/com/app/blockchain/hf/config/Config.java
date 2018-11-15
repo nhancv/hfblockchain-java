@@ -1,4 +1,4 @@
-package org.app.blockchain.hf.config;
+package com.app.blockchain.hf.config;
 
 import java.io.File;
 
