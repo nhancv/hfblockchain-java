@@ -152,7 +152,7 @@ function networkUp() {
   TEST=$1
   checkPrereqs
   # generate artifacts if they don't exist
-  if [ ! -d "../dist/network_resources/crypto-config" ]; then
+  if [ ! -d "../network_resources/crypto-config" ]; then
     generateCerts
     replacePrivateKey
     generateNetworkConfig
@@ -186,7 +186,7 @@ function networkUp() {
 # Tear down running network
 function networkDown() {
   # stop org3 containers also in addition to org1 and org2
-  docker-compose -f $COMPOSE_FILE -f COMPOSE_FILE_COUCH down --volumes --remove-orphans
+  docker-compose -f $COMPOSE_FILE -f $COMPOSE_FILE_COUCH down --volumes --remove-orphans
 
   # Don't remove the generated artifacts -- note, the ledgers are always removed
   if [ "$MODE" != "restart" ]; then
@@ -198,11 +198,11 @@ function networkDown() {
     #Cleanup images
     removeUnwantedImages
     # remove orderer block and other channel configuration transactions and certs
-    rm -rf ../dist/network_resources/config-artifacts ../dist/network_resources/crypto-config ../dist/network_resources/users
-    rm config-artifacts crypto-config
+    rm -rf ../network_resources/config-artifacts ../network_resources/crypto-config ../network_resources/users
+    
     # remove the docker-compose yaml file that was customized to the example
-    rm -f docker-compose/docker-compose.yaml
-    rm -f docker-compose/network-config.json
+    # rm -f docker-compose/docker-compose.yaml
+    # rm -f docker-compose/network-config.json
   fi
 }
 
@@ -220,7 +220,7 @@ function replacePrivateKey() {
   fi
 
   # Copy the template to the file that will be modified to add the private key
-  cp docker-compose/$COMPOSE_FILE_ROOT docker-compose/docker-compose.yaml
+  cp $COMPOSE_FILE_ROOT docker-compose.yaml
 
   # The next steps will replace the template's contents with the
   # actual values of the private key file names for the two CAs.
@@ -425,11 +425,11 @@ function generateChannelArtifacts() {
   echo "#################################################################"
   echo "#######    Prepare Dist Resources   ##########"
   echo "#################################################################"
-  rm -rf ../dist/network_resources/config-artifacts ../dist/network_resources/crypto-config ../dist/network_resources/users
-  mkdir -p ../dist/network_resources/config-artifacts
-  mkdir -p ../dist/network_resources/crypto-config
-  cp -R config-artifacts/ ../dist/network_resources/config-artifacts/
-  cp -R crypto-config/ ../dist/network_resources/crypto-config/
+  rm -rf ../network_resources/config-artifacts ../network_resources/crypto-config ../network_resources/users
+  mkdir -p ../network_resources/config-artifacts
+  mkdir -p ../network_resources/crypto-config
+  cp -R config-artifacts/ ../network_resources/config-artifacts/
+  cp -R crypto-config/ ../network_resources/crypto-config/
   rm -rf config-artifacts crypto-config
   echo "Generate Channel Artifacts DONE"
 
@@ -446,11 +446,11 @@ CLI_DELAY=2
 # channel name defaults to "mvpchannel"
 CHANNEL_NAME="mvpchannel"
 # use this as the default docker-compose yaml definition
-COMPOSE_FILE=docker-compose/docker-compose.yaml
+COMPOSE_FILE=docker-compose.yaml
 #
 COMPOSE_FILE_COUCH=docker-compose/docker-compose-couch.yaml
 #
-COMPOSE_FILE_ROOT=docker-compose-mvp.yaml
+COMPOSE_FILE_ROOT=docker-compose/docker-compose-mvp.yaml
 # use golang as the default language for chaincode
 LANGUAGE=golang
 # default image tag

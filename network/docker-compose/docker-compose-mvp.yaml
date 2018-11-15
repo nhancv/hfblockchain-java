@@ -17,7 +17,7 @@ services:
     - "7054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/:/etc/hyperledger/fabric-ca-server
+    - ../network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/:/etc/hyperledger/fabric-ca-server
     container_name: ca_peerOrg1
     networks:
     - mvp
@@ -33,7 +33,7 @@ services:
     - "8054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/:/etc/hyperledger/fabric-ca-server
+    - ../network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/:/etc/hyperledger/fabric-ca-server
     container_name: ca_peerOrg2
     networks:
     - mvp
@@ -55,10 +55,10 @@ services:
     ports:
     - 7050:7050
     volumes:
-    - ../../dist/network_resources/config-artifacts/:/etc/hyperledger/configtx
-    - ../../dist/network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/:/etc/hyperledger/msp/orderer
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/:/etc/hyperledger/msp/peerOrg1
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/:/etc/hyperledger/msp/peerOrg2
+    - ../network_resources/config-artifacts/:/etc/hyperledger/configtx
+    - ../network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/:/etc/hyperledger/msp/orderer
+    - ../network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/:/etc/hyperledger/msp/peerOrg1
+    - ../network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/:/etc/hyperledger/msp/peerOrg2
 
   peer0.org1.beesightsoft.com:
     container_name: peer0.org1.beesightsoft.com
@@ -84,9 +84,9 @@ services:
     - mvp
     volumes:
     - /var/run/:/host/var/run/
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/msp:/etc/hyperledger/fabric/msp
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users:/etc/hyperledger/msp/users
-    - ../../dist/network_resources/config-artifacts:/etc/hyperledger/configtx
+    - ../network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/msp:/etc/hyperledger/fabric/msp
+    - ../network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users:/etc/hyperledger/msp/users
+    - ../network_resources/config-artifacts:/etc/hyperledger/configtx
     depends_on:
     - orderer.beesightsoft.com
 
@@ -111,9 +111,9 @@ services:
     - 7058:7053
     volumes:
     - /var/run/:/host/var/run/
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/msp:/etc/hyperledger/fabric/msp
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users:/etc/hyperledger/msp/users
-    - ../../dist/network_resources/config-artifacts:/etc/hyperledger/configtx
+    - ../network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer1.org1.beesightsoft.com/msp:/etc/hyperledger/fabric/msp
+    - ../network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users:/etc/hyperledger/msp/users
+    - ../network_resources/config-artifacts:/etc/hyperledger/configtx
     depends_on:
     - orderer.beesightsoft.com
 
@@ -138,9 +138,9 @@ services:
     - 8053:7053
     volumes:
     - /var/run/:/host/var/run/
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/msp:/etc/hyperledger/fabric/msp
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users:/etc/hyperledger/msp/users
-    - ../../dist/network_resources/config-artifacts:/etc/hyperledger/configtx
+    - ../network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/msp:/etc/hyperledger/fabric/msp
+    - ../network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users:/etc/hyperledger/msp/users
+    - ../network_resources/config-artifacts:/etc/hyperledger/configtx
     depends_on:
     - orderer.beesightsoft.com
 
@@ -165,8 +165,8 @@ services:
     - 8058:7053
     volumes:
     - /var/run/:/host/var/run/
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/msp:/etc/hyperledger/fabric/msp
-    - ../../dist/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users:/etc/hyperledger/msp/users
-    - ../../dist/network_resources/config-artifacts:/etc/hyperledger/configtx
+    - ../network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer1.org2.beesightsoft.com/msp:/etc/hyperledger/fabric/msp
+    - ../network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users:/etc/hyperledger/msp/users
+    - ../network_resources/config-artifacts:/etc/hyperledger/configtx
     depends_on:
     - orderer.beesightsoft.com
