@@ -36,10 +36,11 @@ export VERBOSE=false
 function printHelp() {
   echo "Usage: "
   echo "  mvp.sh <mode> [-c <channel name>] [-t <timeout>] [-d <delay>] [-f <docker-compose-file>] [-s <dbtype>] [-l <language>] [-i <imagetag>] [-v]"
-  echo "    <mode> - one of 'up', 'end2end', test', 'down', 'restart', 'generate'"
+  echo "    <mode> - one of 'up', 'end2end', test', 'stop', 'down', 'restart', 'generate'"
   echo "      - 'up' - bring up the network with docker-compose up"
   echo "      - 'end2end' - execute End-2-End Scenario"
   echo "      - 'test' - test chaincode"
+  echo "      - 'stop' - stop network"
   echo "      - 'down' - clear the network with docker-compose down"
   echo "      - 'restart' - restart the network"
   echo "      - 'generate' - generate required certificates and genesis block"
@@ -181,6 +182,15 @@ function networkUp() {
     echo "ERROR !!!! Test failed"
     exit 1
   fi
+}
+
+# Stop network
+function networkUp() {
+  # Exit on first error, print all commands.
+  set -ev
+
+  # Shut down the Docker containers that might be currently running.
+  docker-compose -f $COMPOSE_FILE stop
 }
 
 # Tear down running network
@@ -472,6 +482,8 @@ elif [ "$MODE" == "end2end" ]; then
   EXPMODE="Execute End-2-End Scenario"
 elif [ "$MODE" == "test" ]; then
   EXPMODE="Chaincode testing"
+elif [ "$MODE" == "stop" ]; then
+  EXPMODE="Stop network"
 elif [ "$MODE" == "down" ]; then
   EXPMODE="Stopping"
 elif [ "$MODE" == "restart" ]; then
@@ -535,6 +547,8 @@ elif [ "${MODE}" == "end2end" ]; then ## Execute End-2-End Scenario
   networkUp true
 elif [ "${MODE}" == "test" ]; then ## Test chaincode
   docker exec cli ./channel-scripts/mvp_channel_test.sh $CHANNEL_NAME $CLI_DELAY $LANGUAGE $CLI_TIMEOUT $VERBOSE
+elif [ "${MODE}" == "stop" ]; then ## Stop the network
+  networkStop
 elif [ "${MODE}" == "down" ]; then ## Clear the network
   networkDown
 elif [ "${MODE}" == "generate" ]; then ## Generate Artifacts

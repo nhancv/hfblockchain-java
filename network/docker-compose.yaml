@@ -12,7 +12,7 @@ services:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca-org1
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server/ca.org1.beesightsoft.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server/fb4283fd6385a68a02605a00364857287b865fe47699cdbb561808d5ac749afe_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server/9191fde5f822188ab8fc1dd6209145a636b5ddaf648686d8463cd4755988efe1_sk
     ports:
       - "7054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
@@ -28,7 +28,7 @@ services:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca-org2
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server/ca.org2.beesightsoft.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server/1073cdb5103ac4184a83e0e4ea10a592e76eeae8635e6151cd41642ad0de75ab_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server/14ac3c1700f37aec92d11333727e0129fb1261cdc59c75d57992d05ab3e6cd83_sk
     ports:
       - "8054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
