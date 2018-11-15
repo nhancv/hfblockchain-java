@@ -1,8 +1,0 @@
-cd /Volumes/Data/Docs/Blockchain/HyperledgerFabric/blockchain-application-using-fabric-java-sdk/java
-mvn install
-cd target
-cp blockchain-java-sdk-0.0.1-SNAPSHOT-jar-with-dependencies.jar blockchain-client.jar
-cp blockchain-client.jar ../../network_resources
-cd ../
-cd ../network_resources
-java -cp blockchain-client.jar org.app.network.CreateChannel
