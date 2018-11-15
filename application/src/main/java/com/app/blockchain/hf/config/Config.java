@@ -16,7 +16,7 @@ public class Config {
 
     public static final String ADMIN_PASSWORD = "adminpw";
 
-    public static final String CHANNEL_CONFIG_PATH = "../network_resources/config-artifacts/channel.tx";
+    public static final String CHANNEL_CONFIG_PATH = "../network_resources/config/channel.tx";
 
     public static final String ORG1_USR_BASE_PATH = "../network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/msp";
 

@@ -198,7 +198,7 @@ function networkDown() {
     #Cleanup images
     removeUnwantedImages
     # remove orderer block and other channel configuration transactions and certs
-    rm -rf ../network_resources/config-artifacts ../network_resources/crypto-config ../network_resources/users
+    rm -rf ../network_resources/config ../network_resources/crypto-config ../network_resources/users
     
     # remove the docker-compose yaml file that was customized to the example
     # rm -f docker-compose/docker-compose.yaml
@@ -228,18 +228,18 @@ function replacePrivateKey() {
   cd crypto-config/peerOrganizations/org1.beesightsoft.com/ca/
   PRIV_KEY=$(ls *_sk)
   cd "$CURRENT_DIR"
-  sed $OPTS "s/CA1_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose/docker-compose.yaml
+  sed $OPTS "s/CA1_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose.yaml
   cd crypto-config/peerOrganizations/org2.beesightsoft.com/ca/
   PRIV_KEY=$(ls *_sk)
   cd "$CURRENT_DIR"
-  sed $OPTS "s/CA2_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose/docker-compose.yaml
+  sed $OPTS "s/CA2_PRIVATE_KEY/${PRIV_KEY}/g" docker-compose.yaml
   # If MacOSX, remove the temporary backup of the docker-compose file
   if [ "$ARCH" == "Darwin" ]; then
-    rm docker-compose/docker-compose.yamlt
+    rm docker-compose.yamlt
   fi
 }
 
-# Prepare network-config.json, clone to config-artifacts and update private key
+# Prepare network-config.json, clone to config artifacts and update private key
 function generateNetworkConfig() {
   # sed on MacOSX does not support -i flag with a null extension. We will use
   # 't' for our back-up's extension and delete it at the end of the function
@@ -349,7 +349,7 @@ function generateCerts() {
 # its digital signature verified.
 #
 # This function will generate the crypto material and our four configuration
-# artifacts, and subsequently output these files into the ``config-artifacts``
+# artifacts, and subsequently output these files into the ``config``
 # folder.
 #
 # If you receive the following warning, it can be safely ignored:
@@ -362,7 +362,7 @@ function generateCerts() {
 # Generate orderer genesis block, channel configuration transaction and
 # anchor peer update transactions
 function generateChannelArtifacts() {
-  mkdir config-artifacts
+  mkdir config
   which configtxgen
   if [ "$?" -ne 0 ]; then
     echo "configtxgen tool not found. exiting"
@@ -375,7 +375,7 @@ function generateChannelArtifacts() {
   # Note: For some unknown reason (at least for now) the block file can't be
   # named orderer.genesis.block or the orderer will fail to launch!
   set -x
-  configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./config-artifacts/genesis.block -channelID $CHANNEL_NAME
+  configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./config/genesis.block -channelID $CHANNEL_NAME
   res=$?
   set +x
   if [ $res -ne 0 ]; then
@@ -387,7 +387,7 @@ function generateChannelArtifacts() {
   echo "### Generating channel configuration transaction 'channel.tx' ###"
   echo "#################################################################"
   set -x
-  configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./config-artifacts/channel.tx -channelID $CHANNEL_NAME
+  configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./config/channel.tx -channelID $CHANNEL_NAME
   res=$?
   set +x
   if [ $res -ne 0 ]; then
@@ -400,7 +400,7 @@ function generateChannelArtifacts() {
   echo "#######    Generating anchor peer update for Org1MSP   ##########"
   echo "#################################################################"
   set -x
-  configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
+  configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
   res=$?
   set +x
   if [ $res -ne 0 ]; then
@@ -413,7 +413,7 @@ function generateChannelArtifacts() {
   echo "#######    Generating anchor peer update for Org2MSP   ##########"
   echo "#################################################################"
   set -x
-  configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config-artifacts/Org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org2MSP
+  configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config/Org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org2MSP
   res=$?
   set +x
   if [ $res -ne 0 ]; then
@@ -425,12 +425,12 @@ function generateChannelArtifacts() {
   echo "#################################################################"
   echo "#######    Prepare Dist Resources   ##########"
   echo "#################################################################"
-  rm -rf ../network_resources/config-artifacts ../network_resources/crypto-config ../network_resources/users
-  mkdir -p ../network_resources/config-artifacts
+  rm -rf ../network_resources/config ../network_resources/crypto-config ../network_resources/users
+  mkdir -p ../network_resources/config
   mkdir -p ../network_resources/crypto-config
-  cp -R config-artifacts/ ../network_resources/config-artifacts/
+  cp -R config/ ../network_resources/config/
   cp -R crypto-config/ ../network_resources/crypto-config/
-  rm -rf config-artifacts crypto-config
+  rm -rf config crypto-config
   echo "Generate Channel Artifacts DONE"
 
 }
