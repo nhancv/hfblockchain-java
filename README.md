@@ -1,15 +1,29 @@
 
-# Usage
+### Usage
 
-```bash
-
-# Pull Hyperledger fabric images
+#### 1. Pull Hyperledger Fabric images
+```
 ./hfimages/bootstrap.sh 1.2.1 1.2.1 1.2.1
+```
+#### 2. Generate network artifact
+```
 
-cd network
-# Start network
-./mvp.sh up
+```
+### 3. Start Hyperledger network
+```
 
-# Stop network
-./mvp.sh down
+```
+
+#### 3. Build source
+```
+cd src_mvn
+chmod +x build.sh
+./build.sh
+```
+
+#### 4. Run test network
+```
+cd src_mvn
+chmod +x test.sh
+./test.sh
 ```

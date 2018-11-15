@@ -18,13 +18,9 @@ public class Config {
 
     public static final String CHANNEL_CONFIG_PATH = "network_resources/config/channel.tx";
 
-    public static final String ORG1_USR_BASE_PATH = "network_resources" + File.separator + "crypto-config" + File.separator + "peerOrganizations" + File.separator
-            + "org1.beesightsoft.com" + File.separator + "users" + File.separator + "Admin@org1.beesightsoft.com"
-            + File.separator + "msp";
+    public static final String ORG1_USR_BASE_PATH = "network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/users/Admin@org1.beesightsoft.com/msp";
 
-    public static final String ORG2_USR_BASE_PATH = "network_resources" + File.separator + "crypto-config" + File.separator + "peerOrganizations" + File.separator
-            + "org2.beesightsoft.com" + File.separator + "users" + File.separator + "Admin@org2.beesightsoft.com"
-            + File.separator + "msp";
+    public static final String ORG2_USR_BASE_PATH = "network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/users/Admin@org2.beesightsoft.com/msp";
 
     public static final String ORG1_USR_ADMIN_PK = ORG1_USR_BASE_PATH + File.separator + "keystore";
     public static final String ORG1_USR_ADMIN_CERT = ORG1_USR_BASE_PATH + File.separator + "admincerts";
@@ -58,7 +54,7 @@ public class Config {
 
     public static final String ORG2_PEER_1_URL = "grpc://peer1.org2.beesightsoft.com:8056";
 
-    public static final String CHAINCODE_ROOT_DIR = "chaincode";
+    public static final String CHAINCODE_ROOT_DIR = "network_resources/chaincode";
 
     public static final String CHAINCODE_1_NAME = "fabcar";
 

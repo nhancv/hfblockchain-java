@@ -5,7 +5,7 @@ cd ../
 set -e
 
 # Create and Initialize the channel
-echo -e "-------------Create and Initialize the channel-------------"
+echo -e"-------------Create and Initialize the channel-------------"
 java -cp blockchain-client.jar org.app.blockchain.hf.network.CreateChannel
 sleep 2
 
