@@ -201,7 +201,7 @@ function networkDown() {
     rm -rf ../network_resources/config ../network_resources/crypto-config ../network_resources/users
     
     # remove the docker-compose yaml file that was customized to the example
-    # rm -f docker-compose/docker-compose.yaml
+    # rm -f docker-compose.yaml
     # rm -f docker-compose/network-config.json
   fi
 }
