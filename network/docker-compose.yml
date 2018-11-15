@@ -55,7 +55,7 @@ services:
     ports:
       - 7050:7050
     volumes:
-        - ../network_resources/config/:/etc/hyperledger/configtx
+        - ../network_resources/config-artifacts/:/etc/hyperledger/configtx
         - ../network_resources/crypto-config/ordererOrganizations/beesightsoft.com/orderers/orderer.beesightsoft.com/:/etc/hyperledger/msp/orderer
         - ../network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/peers/peer0.org1.beesightsoft.com/:/etc/hyperledger/msp/peerOrg1
         - ../network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/peers/peer0.org2.beesightsoft.com/:/etc/hyperledger/msp/peerOrg2

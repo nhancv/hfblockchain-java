@@ -17,10 +17,10 @@ set +x
 # rm -Rf crypto-config
 # cryptogen generate --config=./crypto-config.yaml
 # CHANNEL_NAME="mychannel"
-# configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./config/genesis.block -channelID $CHANNEL_NAME
-# configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./config/channel.tx -channelID $CHANNEL_NAME
-# configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
-# configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config/Org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org2MSP
+# configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./config-artifacts/genesis.block -channelID $CHANNEL_NAME
+# configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./config-artifacts/channel.tx -channelID $CHANNEL_NAME
+# configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
+# configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./config-artifacts/Org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org2MSP
 
 # # Gen ca key
 # ARCH=$(uname -s | grep Darwin)
@@ -46,10 +46,10 @@ set +x
 # fi
 
 # # Move config to network_resources
-# rm -Rf ../network_resources/config/*
+# rm -Rf ../network_resources/config-artifacts/*
 # rm -Rf ../network_resources/crypto-config/*
 
-# cp -R config/ ../network_resources/config/
+# cp -R config/ ../network_resources/config-artifacts/
 # cp -R crypto-config/ ../network_resources/crypto-config/
 
 #

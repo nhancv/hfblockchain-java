@@ -1,0 +1,108 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+
+volumes:
+  orderer.beesightsoft.com:
+  peer0.org1.beesightsoft.com:
+  peer1.org1.beesightsoft.com:
+  peer0.org2.beesightsoft.com:
+  peer1.org2.beesightsoft.com:
+
+networks:
+  mvpfn:
+
+services:
+  
+  ca1:
+    container_name: ca_peerOrg1
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: ca1
+    environment:
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/CA1_PRIVATE_KEY
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.beesightsoft.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/CA1_PRIVATE_KEY -b admin:adminpw -d --cfg.identities.allowremove --cfg.affiliations.allowremove'
+    networks:
+      - mvpfn
+
+  ca2:
+    container_name: ca_peerOrg2
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: ca2
+    environment:
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/CA2_PRIVATE_KEY
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org2.beesightsoft.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/CA2_PRIVATE_KEY -b admin:adminpw -d  --cfg.identities.allowremove --cfg.affiliations.allowremove'
+    networks:
+      - mvpfn
+
+  orderer.beesightsoft.com:
+    container_name: orderer.beesightsoft.com
+    extends:
+      file:   base/docker-compose-base.yaml
+      service: orderer.beesightsoft.com
+    networks:
+      - mvpfn
+
+  peer0.org1.beesightsoft.com:
+    container_name: peer0.org1.beesightsoft.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.org1.beesightsoft.com
+    networks:
+      - mvpfn
+
+  peer1.org1.beesightsoft.com:
+    container_name: peer1.org1.beesightsoft.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.org1.beesightsoft.com
+    networks:
+      - mvpfn
+
+  peer0.org2.beesightsoft.com:
+    container_name: peer0.org2.beesightsoft.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.org2.beesightsoft.com
+    networks:
+      - mvpfn
+
+  peer1.org2.beesightsoft.com:
+    container_name: peer1.org2.beesightsoft.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.org2.beesightsoft.com
+    networks:
+      - mvpfn
+
+  cli:
+    container_name: cli
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: cli
+    depends_on:
+      - orderer.beesightsoft.com
+      - peer0.org1.beesightsoft.com
+      - peer1.org1.beesightsoft.com
+      - peer0.org2.beesightsoft.com
+      - peer1.org2.beesightsoft.com
+    networks:
+      - mvpfn
+
+  configtxlator:
+    container_name: configtxlator
+    image: hyperledger/fabric-tools:$IMAGE_TAG
+    ports:
+      - 7059:7059
+    command: /usr/local/bin/configtxlator start
+    networks:
+      - mvpfn
+
+  ccenv:
+    image: hyperledger/fabric-ccenv:$IMAGE_TAG
+    networks:
+      - mvpfn

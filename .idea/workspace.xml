@@ -2,25 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24ce304e-3cae-4720-bcfd-60bb002e7ed3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/network/channel-scripts/chaincode_utils.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/channel-scripts/channel_utils.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/channel-scripts/end2end.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/channel-scripts/mvp_channel.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/channel-scripts/mvp_channel_test.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/config-artifacts/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/docker-compose/base/docker-compose-base.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/docker-compose/base/peer-base.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/docker-compose/docker-compose-couch.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/docker-compose/docker-compose-full.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/docker-compose/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/mvp.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network/network-config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain-client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain-client.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/IssuerPublicKey" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/IssuerPublicKey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/IssuerRevocationPublicKey" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/IssuerRevocationPublicKey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/fabric-ca-server-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/fabric-ca-server-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/network/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/configtx.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/network/configtx.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/crypto-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/network/crypto-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/docker-compose-root.yml" beforeDir="false" afterPath="$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/network/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config/Org1MSPanchors.tx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config/Org2MSPanchors.tx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config/channel.tx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/network_resources/config/genesis.block" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/fabric-ca-server.db" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/fabric-ca-server.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/msp/keystore/IssuerRevocationPrivateKey" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/msp/keystore/IssuerRevocationPrivateKey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/msp/keystore/IssuerSecretKey" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org1.beesightsoft.com/ca/msp/keystore/IssuerSecretKey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/IssuerPublicKey" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/IssuerPublicKey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/IssuerRevocationPublicKey" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/IssuerRevocationPublicKey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/fabric-ca-server-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/fabric-ca-server-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/fabric-ca-server.db" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/fabric-ca-server.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/msp/keystore/IssuerRevocationPrivateKey" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/msp/keystore/IssuerRevocationPrivateKey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/msp/keystore/IssuerSecretKey" beforeDir="false" afterPath="$PROJECT_DIR$/network_resources/crypto-config/peerOrganizations/org2.beesightsoft.com/ca/msp/keystore/IssuerSecretKey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network_resources/users/org1/admin.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_mvn/test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src_mvn/test.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/org1/admin.ser" beforeDir="false" afterPath="$PROJECT_DIR$/users/org1/admin.ser" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,38 +52,42 @@
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="go" value="1" />
-          <entry key="java" value="33" />
+          <entry key="java" value="34" />
           <entry key="md" value="3" />
           <entry key="sh" value="11" />
           <entry key="txt" value="1" />
-          <entry key="yaml" value="1" />
+          <entry key="yaml" value="3" />
+          <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="11" />
           <entry key="Go" value="1" />
-          <entry key="JAVA" value="33" />
+          <entry key="JAVA" value="34" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="YAML" value="1" />
+          <entry key="YAML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="java" value="94" />
-          <entry key="md" value="50" />
+          <entry key="md" value="209" />
           <entry key="sh" value="222" />
           <entry key="txt" value="55" />
+          <entry key="yaml" value="14" />
+          <entry key="yml" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="223" />
           <entry key="JAVA" value="94" />
-          <entry key="Markdown" value="49" />
+          <entry key="Markdown" value="208" />
           <entry key="PLAIN_TEXT" value="56" />
+          <entry key="YAML" value="24" />
         </counts>
       </usages-collector>
     </session>
@@ -84,52 +97,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/network/build.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-311">
-              <caret column="11" selection-end-column="11" />
+            <state relative-caret-position="152">
+              <caret line="19" column="115" lean-forward="true" selection-start-line="19" selection-start-column="102" selection-end-line="19" selection-end-column="115" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/network/crypto-config.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java">
+        <entry file="file://$PROJECT_DIR$/network/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="22" column="159" selection-start-line="22" selection-start-column="159" selection-end-line="22" selection-end-column="159" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src_mvn/test.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="135">
-                <caret line="9" selection-start-line="9" selection-end-line="9" />
-              </first_editor>
-              <second_editor />
+            <state relative-caret-position="315">
+              <caret line="21" column="13" lean-forward="true" selection-end-line="172" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="90">
+              <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="27" selection-start-line="23" selection-end-line="24" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose-full.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="36" column="93" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -142,6 +156,8 @@
       <find>org.app.user.</find>
       <find>CHAINCODE_1_PATH</find>
       <find>&quot; + File.separator + &quot;</find>
+      <find>channel.tx</find>
+      <find>/config/</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -170,9 +186,13 @@
         <option value="$PROJECT_DIR$/test.sh" />
         <option value="$PROJECT_DIR$/src_mvn/build.sh" />
         <option value="$PROJECT_DIR$/src_mvn/test.sh" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/network/crypto-config.yaml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java" />
+        <option value="$PROJECT_DIR$/network/build.sh" />
+        <option value="$PROJECT_DIR$/network/docker-compose-root.yml" />
+        <option value="$PROJECT_DIR$/network/docker-compose/docker-compose.yaml" />
       </list>
     </option>
   </component>
@@ -212,6 +232,12 @@
             <path>
               <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
               <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+              <item name="docker-compose" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
               <item name="network_resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -243,12 +269,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="github.com" type="462c0819:PsiDirectoryNode" />
               <item name="abac" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hfblockchain-java" type="462c0819:PsiDirectoryNode" />
-              <item name="network_resources" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hf-mvp" type="b2602c69:ProjectViewProjectNode" />
@@ -306,7 +326,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542282141935" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542283070388" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -316,6 +336,9 @@
     <property name="settings.editor.selected.configurable" value="copyright.profiles" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/network/docker-compose" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -434,12 +457,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542278986983</updated>
       <workItem from="1542278988168" duration="598000" />
-      <workItem from="1542280194773" duration="1942000" />
+      <workItem from="1542280194773" duration="2868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2540000" />
+    <option name="totallyTimeSpent" value="3466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="834" extended-state="0" />
@@ -459,10 +482,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32962447" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.49791378" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.49791378" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -619,33 +642,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/network/crypto-config.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/network_resources/chaincode/src/github.com/abac/abac.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-387" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/network/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-311">
-          <caret column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="22" column="159" selection-start-line="22" selection-start-column="159" selection-end-line="22" selection-end-column="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src_mvn/test.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme/READMEv1.2.md">
@@ -658,20 +657,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="135">
-            <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src_mvn/test.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="123">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/crypto-config.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/blockchain/hf/config/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/build.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="19" column="115" lean-forward="true" selection-start-line="19" selection-start-column="102" selection-end-line="19" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose-full.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="36" column="93" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose-mvp.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="27" selection-start-line="23" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="13" lean-forward="true" selection-end-line="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/docker-compose/docker-compose.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
