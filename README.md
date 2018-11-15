@@ -27,3 +27,8 @@ cd src_mvn
 chmod +x test.sh
 ./test.sh
 ```
+
+#### Inspect genesis block
+```
+configtxgen -inspectBlock genesis.block --configPath=/Volumes/Data/Docs/Blockchain/HyperledgerFabric/hfblockchain-java/network
+```

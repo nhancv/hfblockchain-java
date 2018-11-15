@@ -1,5 +1,5 @@
-network/config-artifacts/*
-network/crypto-config/*
+network_resources/config
+network_resources/crypto-config
 
 # Emacs backup files
 *~
