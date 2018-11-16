@@ -185,7 +185,7 @@ function networkUp() {
 }
 
 # Stop network
-function networkUp() {
+function networkStop() {
   # Exit on first error, print all commands.
   set -ev
 
@@ -464,7 +464,7 @@ COMPOSE_FILE_ROOT=docker-compose/docker-compose-mvp.yaml
 # use golang as the default language for chaincode
 LANGUAGE=golang
 # default image tag
-IMAGETAG="latest"
+IMAGETAG="1.2.1"
 # default using goleveldb
 IF_COUCHDB="goleveldb"
 # mvp mode
